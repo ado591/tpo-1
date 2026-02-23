@@ -22,11 +22,11 @@ jobs:
       - name: setup gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: wrapper
+          gradle-version: 8.3
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
       - name: grant permission
         run: chmod +x gradlew
 
       - name: build and run tests
-        run: ./gradlew clean test jacocoTestReport
+        run: gradle clean test jacocoTestReport
