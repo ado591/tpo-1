@@ -1,0 +1,26 @@
+name: test project
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  task1-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: set up jdk21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          cache: 'gradle'
+          distribution: 'temurin'
+
+      - name: grant permission
+        run: chmod +x gradlew
+        
+      - name: build and run tests
+        run: ./gradlew clean test jacocoTestReport
