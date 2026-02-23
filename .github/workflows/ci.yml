@@ -6,7 +6,7 @@ on:
       - '**'
 
 jobs:
-  task1-build:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -25,8 +25,15 @@ jobs:
           gradle-version: 8.3
           cache-read-only: ${{ github.ref != 'refs/heads/main' }}
 
-      - name: grant permission
-        run: chmod +x gradlew
-
       - name: build and run tests
-        run: gradle clean test jacocoTestReport
+        run: gradle clean test jacocoTestReport --stacktrace
+
+      - name: upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            build/reports/tests/
+            build/reports/jacoco/
+          retention-days: 5
