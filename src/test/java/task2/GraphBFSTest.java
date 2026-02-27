@@ -9,7 +9,7 @@ import java.util.*;
 public class GraphBFSTest {
 
     @Test
-    @DisplayName("BFS: простой связный граф 1→2,1→3,2→4,3→4")
+    @DisplayName("BFS: простой связный граф 1 -> 2, 1 -> 3, 2 -> 4, 3 -> 4")
     void testBFS_simpleGraph() {
         GraphBFS graph = new GraphBFS();
         graph.addEdge(1, 2);
@@ -105,6 +105,4 @@ public class GraphBFSTest {
 
         assertEquals(List.of(1, 2), result);
     }
-
-
 }
