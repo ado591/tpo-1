@@ -34,11 +34,11 @@ public class GraphBFSTest {
 
         List<Integer> expectedOrder = Arrays.asList(1, 2, 3);
         List<Integer> actualOrder = graph.bfs(1);
-        assertEquals(expectedOrder, actualOrder, "Посещены вершины только из первой компоненты связности");
+        assertEquals(expectedOrder, actualOrder);
 
         List<Integer> expectedOrder2 = Arrays.asList(4, 5);
         List<Integer> actualOrder2 = graph.bfs(4);
-        assertEquals(expectedOrder2, actualOrder2, "Посещены вершины только из первой компоненты связности");
+        assertEquals(expectedOrder2, actualOrder2);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class GraphBFSTest {
         List<Integer> expectedOrder = Arrays.asList(1, 2, 3);
         List<Integer> actualOrder = graph.bfs(1);
 
-        assertEquals(expectedOrder, actualOrder, "BFS в циклическом графе завершается");
+        assertEquals(expectedOrder, actualOrder);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class GraphBFSTest {
 
         List<Integer> actualOrder = graph.bfs(1);
 
-        assertEquals(expectedOrder, actualOrder, "Все вершины посещены");
+        assertEquals(expectedOrder, actualOrder);
     }
 
     @Test
