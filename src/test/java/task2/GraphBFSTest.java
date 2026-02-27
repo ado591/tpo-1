@@ -47,7 +47,7 @@ public class GraphBFSTest {
         GraphBFS graph = new GraphBFS();
         graph.addEdge(1, 2);
         graph.addEdge(2, 3);
-        graph.addEdge(3, 1); //цикл
+        graph.addEdge(3, 1);
 
         List<Integer> expectedOrder = Arrays.asList(1, 2, 3);
         List<Integer> actualOrder = graph.bfs(1);
