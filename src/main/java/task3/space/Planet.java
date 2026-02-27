@@ -13,7 +13,7 @@ public class Planet extends SpaceObject {
     private Boolean pole;
     private PlanetType type;
 
-    void changePole() {
+    public void changePole() {
         if (pole != null) {
             this.pole = !this.pole;
         }
