@@ -79,7 +79,7 @@ public class GraphBFSTest {
 
     @Test
     @DisplayName("BFS: при обходе графа вершины обходятся по уровням")
-    void testBfsWithBranching() {
+    void testBFS_withBranching() {
         GraphBFS graph = new GraphBFS();
         graph.addEdge(1, 2);
         graph.addEdge(1, 3);
@@ -96,7 +96,7 @@ public class GraphBFSTest {
 
     @Test
     @DisplayName("BFS: обход графа корректно обрабатывает дублирующиеся ребра")
-    void testBfsWithMultipleEdgesToSameVertex() {
+    void testBFS_withMultipleEdgesToSameVertex() {
         GraphBFS graph = new GraphBFS();
         graph.addEdge(1, 2);
         graph.addEdge(1, 2);
