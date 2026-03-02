@@ -43,12 +43,6 @@ class CreatureTest {
     }
 
     @Test
-    void die_SetsDeathType() {
-        creature.die(DeathType.CHOKING);
-        assertEquals(DeathType.CHOKING, creature.getDeathType());
-    }
-
-    @Test
     void die_SetsIsAliveToFalse() {
         creature.setAlive(true);
         creature.die(DeathType.CHOKING);

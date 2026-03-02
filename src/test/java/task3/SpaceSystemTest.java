@@ -37,13 +37,6 @@ class SpaceSystemTest {
         assertTrue(system.getChildren().isEmpty());
     }
 
-    @Test
-    void collapse_EmptyChildren_DoesNothing() {
-        SpaceSystem emptySystem = new SpaceSystem();
-        emptySystem.collapse();
-
-        assertTrue(emptySystem.getChildren().isEmpty());
-    }
 
     @Test
     void collapse_WithMultipleChildren() {

@@ -67,9 +67,10 @@ class UniverseTest {
     void expand_MultipleExpands() {
         universe.setSize(2500.0);
         universe.expand();
+        assertEquals(5000.0, universe.getSize());
         universe.expand();
+        assertEquals(10000.0, universe.getSize());
         universe.expand();
-
         assertEquals(10000.0, universe.getSize());
     }
 
